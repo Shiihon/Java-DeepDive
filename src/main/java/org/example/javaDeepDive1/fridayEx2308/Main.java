@@ -38,7 +38,7 @@ public class Main {
         GardenTask gardenTask5 = new GardenTask("Weed the garden", "Remove weeds from the garden beds", LocalDate.now().plusDays(3), "Herb garden");
         taskList.addTask(gardenTask5);
 
-        //Print all tasks
+        //Print list of tasks
         System.out.println("All tasks: ");
         taskList.printTasks();
         System.out.println();//space
