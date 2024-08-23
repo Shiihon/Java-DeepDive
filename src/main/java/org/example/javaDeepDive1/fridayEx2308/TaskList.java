@@ -6,10 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDate;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -18,7 +15,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @ToString
 public class TaskList<T extends Task> implements Iterable<T> {
-    private List<T> taskList;
+    private List<T> taskList = new ArrayList<>();
     private final LocalDate today = LocalDate.now();
 
     @Override
@@ -38,6 +35,10 @@ public class TaskList<T extends Task> implements Iterable<T> {
 
     public void addTask(T task) {
         taskList.add(task);
+    }
+
+    public List<T> getTasks(){
+        return taskList;
     }
 
     public List<T> filterTasks(String keyword) {
